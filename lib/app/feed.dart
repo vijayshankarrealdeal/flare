@@ -14,7 +14,7 @@ class Feeds extends StatelessWidget {
       child: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScaffold) => [
                 const CupertinoSliverNavigationBar(
-                  largeTitle: const Text("Feed"),
+                  largeTitle:  Text("Feed"),
                   padding: EdgeInsetsDirectional.zero,
                 ),
                 const SliverToBoxAdapter(
@@ -45,7 +45,7 @@ class Feeds extends StatelessWidget {
                         mainAxisSpacing: 1,
                         crossAxisSpacing: 1,
                         repeatPattern: QuiltedGridRepeatPattern.inverted,
-                        pattern: [
+                        pattern: const [
                           QuiltedGridTile(1, 1),
                           QuiltedGridTile(1, 1),
                           QuiltedGridTile(2, 2),

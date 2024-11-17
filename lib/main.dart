@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:no_screenshot/no_screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:radiant/main_page.dart';
-import 'package:radiant/modules/navbar.dart';
+import 'package:radiant/modules/settings_logic.dart';
 
-void main() {
+void main() async {
+  final noScreenshot = NoScreenshot.instance;
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (ctx) => NavbarModules()),
+    ChangeNotifierProvider(create: (ctx) => SettingsLogic()),
   ], child: const MyApp()));
+  await noScreenshot.screenshotOff();
 }
 
 class MyApp extends StatelessWidget {
@@ -15,12 +17,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      theme: CupertinoThemeData(
-          textTheme: CupertinoTextThemeData(), brightness: Brightness.dark),
-      debugShowCheckedModeBanner: false,
-      home: const StartPage(),
-    );
+    return Consumer<SettingsLogic>(builder: (context, settingsLogic, _) {
+      return CupertinoApp(
+        theme: CupertinoThemeData(
+            textTheme: const CupertinoTextThemeData(),
+            brightness:
+                settingsLogic.dark ? Brightness.dark : Brightness.light),
+        debugShowCheckedModeBanner: false,
+        home: const StartPage(),
+      );
+    });
   }
 }
 

@@ -6,9 +6,9 @@ class NotificationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+      navigationBar: const CupertinoNavigationBar(
         previousPageTitle: "Home",
-        middle: const Text("Notifications"),
+        middle:  Text("Notifications"),
       ),
       child: Container(),
     );

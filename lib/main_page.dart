@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:radiant/app/account.dart';
 import 'package:radiant/app/feed.dart';
-import 'package:radiant/app/home_page.dart';
+import 'package:radiant/app/home.dart';
 import 'package:radiant/app/messages.dart';
-import 'package:radiant/modules/navbar.dart';
+import 'package:radiant/modules/settings_logic.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -18,40 +17,38 @@ class MainPage extends StatelessWidget {
       Messages(),
       Account()
     ];
-    return Consumer<NavbarModules>(builder: (context, navBar, _) {
-      return CupertinoPageScaffold(
-        child: CupertinoTabScaffold(
-            tabBar: CupertinoTabBar(
-              height: MediaQuery.of(context).size.height * 0.085,
-              items: const [
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      CupertinoIcons.home,
-                    ),
-                    label: ""),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      CupertinoIcons.f_cursive_circle,
-                    ),
-                    label: ""),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      CupertinoIcons.chat_bubble_2,
-                    ),
-                    label: ""),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      CupertinoIcons.person_circle,
-                    ),
-                    label: ""),
-              ],
-            ),
-            tabBuilder: (BuildContext context, index) {
-              return CupertinoTabView(builder: (context) {
-                return mainScreens[index];
-              });
-            }),
-      );
-    });
+    return CupertinoPageScaffold(
+      child: CupertinoTabScaffold(
+          tabBar: CupertinoTabBar(
+            height: MediaQuery.of(context).size.height * 0.085,
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    CupertinoIcons.home,
+                  ),
+                  label: ""),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    CupertinoIcons.f_cursive_circle,
+                  ),
+                  label: ""),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    CupertinoIcons.chat_bubble_2,
+                  ),
+                  label: ""),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    CupertinoIcons.person_circle,
+                  ),
+                  label: ""),
+            ],
+          ),
+          tabBuilder: (BuildContext context, index) {
+            return CupertinoTabView(builder: (context) {
+              return mainScreens[index];
+            });
+          }),
+    );
   }
 }
