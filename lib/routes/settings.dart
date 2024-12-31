@@ -27,8 +27,8 @@ class Settings extends StatelessWidget {
                             : CupertinoColors.white,
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      margin: EdgeInsets.symmetric(horizontal: 8),
-                      header: Text("User Settings"),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      header: const Text("User Settings"),
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class Settings extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                CircleAvatar(
+                                const CircleAvatar(
                                   radius: 45,
                                 ),
                                 const SizedBox(width: 20),
@@ -49,12 +49,13 @@ class Settings extends StatelessWidget {
                                   children: [
                                     CupertinoButton(
                                       padding: EdgeInsets.zero,
-                                      child: Text("Add/Change Profile Picture"),
+                                      child: const Text(
+                                          "Add/Change Profile Picture"),
                                       onPressed: () {},
                                     ),
                                     CupertinoButton(
                                       padding: EdgeInsets.zero,
-                                      child: Text(
+                                      child: const Text(
                                         "Remove Profile Picture",
                                         style: TextStyle(
                                             color:
@@ -75,7 +76,7 @@ class Settings extends StatelessWidget {
                         ),
                         CupertinoTextFormFieldRow(
                           controller: TextEditingController(),
-                          prefix: Text("UserName"),
+                          prefix: const Text("UserName"),
                           placeholder: "Change UserName",
                         ),
                       ],
@@ -87,9 +88,9 @@ class Settings extends StatelessWidget {
                               : CupertinoColors.white,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        margin: EdgeInsets.symmetric(horizontal: 8),
+                        margin: const EdgeInsets.symmetric(horizontal: 8),
                         clipBehavior: Clip.antiAliasWithSaveLayer,
-                        header: Text("App Settings"),
+                        header: const Text("App Settings"),
                         children: [
                           CupertinoFormRow(
                             prefix: Row(
@@ -110,48 +111,54 @@ class Settings extends StatelessWidget {
                             ),
                           ),
                           CupertinoFormRow(
-                            prefix: Row(
+                            prefix: const Row(
                               children: [
                                 Icon(
                                   CupertinoIcons.lock,
                                 ),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text("Data & Privacy"),
                               ],
                             ),
                             child: CupertinoButton(
-                                child: Icon(CupertinoIcons.chevron_forward),
                                 onPressed: () {},
-                                padding: EdgeInsets.symmetric(horizontal: 8)),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child:
+                                    const Icon(CupertinoIcons.chevron_forward)),
                           ),
-                           CupertinoFormRow(
-                            prefix: Row(
+                          CupertinoFormRow(
+                            prefix: const Row(
                               children: [
                                 Icon(
                                   CupertinoIcons.person_badge_minus,
                                 ),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text("Blocked Users"),
                               ],
                             ),
                             child: CupertinoButton(
-                                child: Icon(CupertinoIcons.chevron_forward),
                                 onPressed: () {},
-                                padding: EdgeInsets.symmetric(horizontal: 8)),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child:
+                                    const Icon(CupertinoIcons.chevron_forward)),
                           ),
                           CupertinoFormRow(
-                            prefix: Row(
+                            prefix: const Row(
                               children: [
                                 Icon(CupertinoIcons.globe,
                                     color: CupertinoColors.activeGreen),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text("Languages"),
                               ],
                             ),
                             child: CupertinoButton(
-                                child: Icon(CupertinoIcons.chevron_forward),
                                 onPressed: () {},
-                                padding: EdgeInsets.symmetric(horizontal: 8)),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child:
+                                    const Icon(CupertinoIcons.chevron_forward)),
                           ),
                         ]),
                     CupertinoFormSection(
@@ -161,37 +168,40 @@ class Settings extends StatelessWidget {
                               : CupertinoColors.white,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        header: Text("Help"),
+                        margin: const EdgeInsets.symmetric(horizontal: 8),
+                        header: const Text("Help"),
                         children: [
                           CupertinoFormRow(
-                            prefix: Row(
+                            prefix: const Row(
                               children: [
                                 Icon(
                                   CupertinoIcons.exclamationmark_triangle,
                                 ),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text("Report"),
                               ],
                             ),
                             child: CupertinoButton(
-                                child: Icon(CupertinoIcons.chevron_forward),
                                 onPressed: () {},
-                                padding: EdgeInsets.symmetric(horizontal: 8)),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child:
+                                    const Icon(CupertinoIcons.chevron_forward)),
                           ),
                           CupertinoFormRow(
-                            prefix: Row(
+                            prefix: const Row(
                               children: [
                                 Icon(CupertinoIcons.delete,
                                     color: CupertinoColors.destructiveRed),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 Text("Delete Account"),
                               ],
                             ),
                             child: CupertinoButton(
-                                child: Text("Proceed"),
                                 onPressed: () {},
-                                padding: EdgeInsets.symmetric(horizontal: 8)),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child: const Text("Proceed")),
                           )
                         ]),
                   ],

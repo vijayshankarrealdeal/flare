@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:no_screenshot/no_screenshot.dart';
 import 'package:provider/provider.dart';
 import 'package:radiant/main_page.dart';
 import 'package:radiant/modules/settings_logic.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   final noScreenshot = NoScreenshot.instance;
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (ctx) => SettingsLogic()),

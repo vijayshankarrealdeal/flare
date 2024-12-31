@@ -6,7 +6,7 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _showActionSheet(BuildContext context) {
+    void showActionSheet(BuildContext context) {
       showCupertinoModalPopup(
         context: context,
         builder: (BuildContext context) => CupertinoActionSheet(
@@ -15,7 +15,6 @@ class ChatPage extends StatelessWidget {
             CupertinoActionSheetAction(
               onPressed: () {
                 Navigator.pop(context); // Close the action sheet
-                print('Option 1 Selected');
               },
               child: const Text('Call'),
             ),
@@ -30,7 +29,6 @@ class ChatPage extends StatelessWidget {
           cancelButton: CupertinoActionSheetAction(
             onPressed: () {
               Navigator.pop(context); // Close the action sheet
-              print('Cancel Selected');
             },
             child: const Text('Cancel'),
           ),
@@ -44,7 +42,7 @@ class ChatPage extends StatelessWidget {
           middle: Text(username),
           trailing: CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () => _showActionSheet(context),
+            onPressed: () => showActionSheet(context),
             child: const Icon(CupertinoIcons.ellipsis_vertical),
           )),
       child: Container(),

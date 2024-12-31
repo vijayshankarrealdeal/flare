@@ -31,7 +31,7 @@ class ProfileHeader extends SliverPersistentHeaderDelegate {
             ),
           ),
         ),
-        Positioned(
+        const Positioned(
           left: 16.0,
           bottom: 16.0,
           child:CircleAvatar(

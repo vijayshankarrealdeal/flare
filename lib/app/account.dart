@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:radiant/routes/settings.dart';
 import 'package:radiant/widgets/sliverheading.dart';
 
@@ -40,9 +41,27 @@ class Account extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text("Username"),
-                  CupertinoButton(
-                    child: const Text("Follow"),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      side: const BorderSide(
+                        color: CupertinoColors.activeBlue,
+                        width: 0.5, // Border width
+                      ),
+                      minimumSize: const Size(70, 25),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(8), // Rounded corners
+                      ),
+                    ),
                     onPressed: () {},
+                    child: Text("Follow",
+                        style: TextStyle(
+                          color: CupertinoTheme.of(context).brightness ==
+                                  Brightness.dark
+                              ? CupertinoColors.white
+                              : CupertinoColors.black,
+                        )),
                   ),
                 ],
               ),
