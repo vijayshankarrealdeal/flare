@@ -37,7 +37,7 @@ class MainPage extends StatelessWidget {
                   label: ""),
               BottomNavigationBarItem(
                   icon: Icon(
-                    CupertinoIcons.person_circle,
+                    CupertinoIcons.person,
                   ),
                   label: ""),
             ],

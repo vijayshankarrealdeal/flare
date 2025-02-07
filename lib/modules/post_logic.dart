@@ -73,6 +73,13 @@ class PostLogic with ChangeNotifier {
           'https://assets.mixkit.co/active_storage/video_items/100101/1720116057/100101-video-720.mp4',
       isVideo: true,
     ),
+    Post(
+      username: "user6",
+      userAvatarUrl: 'https://via.placeholder.com/50',
+      contentUrl:
+          'https://videos.pexels.com/video-files/9745723/9745723-uhd_1440_2732_25fps.mp4',
+      isVideo: true,
+    ),
   ];
 
   /// Maximum number of active video controllers

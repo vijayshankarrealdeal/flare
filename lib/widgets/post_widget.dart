@@ -45,7 +45,7 @@ class PostWidget extends StatelessWidget {
               // 1) User info row
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                    const EdgeInsets.only(left: 28.0, top: 8.0, bottom: 8.0, right: 8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -74,29 +74,30 @@ class PostWidget extends StatelessWidget {
                 ),
               ),
               // 2) The main content (video or image)
-              Expanded(
+              SizedBox(
+                height: 100,
                 child: Stack(
                   fit: StackFit.loose,
                   children: [
                     Center(
                       child: post.isVideo
-                          ? AspectRatio(
+                          ?
+                           AspectRatio(
                               aspectRatio: _getAspectRatio(post, controller),
                               child: _buildVideoPlayer(controller))
                           : Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Card(
-                                child: CachedNetworkImage(
-                                  fit: BoxFit.fitWidth,
-                                  imageUrl: post.contentUrl,
-                                ),
+                              child: CachedNetworkImage(
+                                fit: BoxFit.fitWidth,
+                                imageUrl: post.contentUrl,
                               ),
                             ),
                     ),
                     const Positioned(
                       bottom: 12,
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 28.0, vertical: 8),
                         child: Row(
                           children: [
                             Icon(CupertinoIcons.heart),
